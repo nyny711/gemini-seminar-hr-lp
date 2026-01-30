@@ -379,7 +379,7 @@ export default function Home() {
             ].map((point, index) => (
               <motion.div key={index} variants={fadeIn}>
                 <Card className="border-2 border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 h-full bg-white">
-                  <CardHeader className="bg-white border-b border-slate-100 pt-4">
+                  <CardHeader className="bg-white border-b border-slate-100 pt-3 pb-3">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-full bg-cyan-600 flex items-center justify-center flex-shrink-0">
                         <point.icon className="h-6 w-6 text-white" />
@@ -387,7 +387,7 @@ export default function Home() {
                       <CardTitle className="text-slate-900">{point.title}</CardTitle>
                     </div>
                   </CardHeader>
-                  <CardContent className="pt-6 bg-white">
+                  <CardContent className="pt-4 pb-4 bg-white">
                     <p className="text-slate-700 leading-relaxed">{point.description}</p>
                   </CardContent>
                 </Card>
