@@ -16,12 +16,12 @@ import { toast } from "sonner";
 // セミナー情報の定義
 const seminar = {
   id: "vol1",
-  title: "「商談時間」を最大化する",
-  subtitle: "～複雑性の高い業務をAIで効率化する～",
+  title: "「マッチング精度」を最大化する",
+  subtitle: "～人材と案件のマッチングをAIで効率化する～",
   date: "2026年2月10日(火)",
   time: "14:00～15:00",
   image: "/seminar-vol1.png",
-  description: "RFP・見積・技術照会、顧客管理をAIで効率的に行えます。営業マンを「本来の仕事」に集中させる具体的メソッドを解説！"
+  description: "案件理解・人材マッチング・提案資料作成・進捗管理をAIで効率化。営業を「本来の仕事」に集中させる具体的メソッドを解説！"
 };
 
 export default function Home() {
@@ -145,22 +145,22 @@ export default function Home() {
             </Badge>
             
             <div className="mb-8">
-              <p className="text-cyan-400 text-lg mb-2">SI・開発DXウェビナー 営業改革シリーズ</p>
+              <p className="text-cyan-400 text-lg mb-2">人材DXウェビナー 営業改革シリーズ</p>
               <Badge className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-6 py-2 text-base">
                 参加無料
               </Badge>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              SI・開発企業の営業を<br />
+              人材業界の営業を<br />
               <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                 AIで変革する
               </span>
             </h1>
 
             <p className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed max-w-3xl mx-auto">
-              RFP・見積・技術照会などの複雑性が高い業務をAIで効率化し、<br />
-              営業マンを「本来の仕事」に集中させる具体的メソッドを解説！
+              案件理解・人材マッチング・提案資料作成・進捗管理をAIで効率化し、<br />
+              営業を「本来の仕事」に集中させる具体的メソッドを解説！
             </p>
 
             {/* 特典情報 */}
@@ -296,10 +296,10 @@ export default function Home() {
             className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
           >
             {[
-              { icon: FileText, text: "RFPや見積作成に時間がかかりすぎる" },
-              { icon: Search, text: "技術調査や情報収集が属人化している" },
-              { icon: MessageSquare, text: "顧客への提案資料作成が負担" },
-              { icon: BarChart3, text: "営業活動の効率化が進まない" },
+              { icon: FileText, text: "案件理解・要件整理に時間がかかる", detail: "求人票・案件票がバラバラで、必須スキルが分からず提案スピードが落ちる" },
+              { icon: Users, text: "人材と案件のマッチングが属人的", detail: "ベテラン営業の「勘」や「記憶」に依存し、良い人材が眠りミスマッチが増える" },
+              { icon: MessageSquare, text: "提案資料・推薦文の作成が手作業", detail: "スキルシートを見て文章を毎回手書き、「作る時間」ばかりかかる" },
+              { icon: BarChart3, text: "フォロー・進捗管理が後回しになる", detail: "誰にいつ連絡すべきか分からず、対応漏れで成約機会を逃す" },
             ].map((problem, index) => (
               <motion.div key={index} variants={fadeIn}>
                 <Card className="border-2 border-slate-200 hover:border-cyan-500 transition-all duration-300 shadow-sm hover:shadow-lg">
@@ -326,7 +326,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">本セミナーで学べること</h2>
             <div className="w-20 h-1 bg-cyan-600 mx-auto mt-6" />
-            <p className="text-lg text-slate-600 mt-6">SI・開発企業の営業現場で実際に使える、4つの実践スキルを習得できます。</p>
+            <p className="text-lg text-slate-600 mt-6">人材業界の営業現場で実際に使える、4つの実践スキルを習得できます。</p>
           </div>
 
           <motion.div 
@@ -339,23 +339,23 @@ export default function Home() {
             {[
               {
                 icon: FileText,
-                title: "RFP・見積作成の効率化",
-                description: "複雑な要件定義や見積作成をGeminiで自動化し、作業時間を大幅に削減する方法を学びます。"
+                title: "案件情報をAIが自動で構造化",
+                description: "AIが求人・案件文を解析して、必須スキル・尚可スキル・勤務条件・優先度を自動整理。営業は「読む」ではなく「判断」だけで済み、案件理解の時間を大幅削減。"
               },
               {
-                icon: Search,
-                title: "技術調査の高速化",
-                description: "最新技術のリサーチや競合分析をAIで効率化し、提案の質を向上させる手法を習得します。"
+                icon: Users,
+                title: "AIがマッチ候補人材を自動抽出",
+                description: "AIが案件条件・スキルシート・過去成約データを横断検索し、「この案件に合う人材TOP5」を提示。属人性を排除し、誰でも一定品質のマッチングが可能に。"
               },
               {
                 icon: MessageSquare,
-                title: "提案資料の自動生成",
-                description: "顧客ニーズに合わせた提案書を短時間で作成するテクニックを実践的に学びます。"
+                title: "提案文・推薦コメントをAIが自動生成",
+                description: "AIが案件要件と人材スキルをもとに「この案件に合う理由」を文章化。提案作成時間を大幅短縮し、表現の品質が統一され、新人でも即戦力に。"
               },
               {
                 icon: BrainCircuit,
-                title: "顧客管理の最適化",
-                description: "顧客情報の整理や商談履歴の管理をAIで効率化し、営業活動を最適化します。"
+                title: "次にやるべき営業行動をAIが提案",
+                description: "AIが進捗・未対応期間・返信状況を見て「今日やるべき営業タスク」を提示。例：「3日連絡していないA社にフォロー」「書類通過したB社へ面談調整」。対応漏れ防止で成約率アップ。"
               },
             ].map((point, index) => (
               <motion.div key={index} variants={fadeIn}>
@@ -487,7 +487,7 @@ export default function Home() {
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
-                    <span>SI・開発企業の営業担当者</span>
+                    <span>人材企業の営業担当者</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
@@ -577,7 +577,7 @@ export default function Home() {
               そろそろアップデートしませんか？
             </h2>
             <p className="text-xl text-slate-300 mb-8">
-              Geminiで変わる"次世代のSI・開発営業"を体験してください。
+              Geminiで変わる"次世代の人材営業"を体験してください。
             </p>
             <Button 
               size="lg" 
