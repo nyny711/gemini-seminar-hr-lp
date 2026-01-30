@@ -118,7 +118,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <img 
             src="/images/hero-bg.jpg" 
-            alt="SI Development Control Room" 
+            alt="Business Control Room" 
             className="w-full h-full object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/30" />

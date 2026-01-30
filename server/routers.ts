@@ -46,7 +46,7 @@ export const appRouter = router({
           
           const confirmationEmailSent = await sendEmail({
             to: input.email,
-            subject: "【申し込み完了】SI・開発営業のためのGemini活用セミナー",
+            subject: "【申し込み完了】営業のためのGemini活用セミナー",
             html: generateConfirmationEmail({
               name: input.name,
               company: input.company,
