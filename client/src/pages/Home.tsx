@@ -302,12 +302,15 @@ export default function Home() {
               { icon: BarChart3, text: "フォロー・進捗管理が後回しになる", detail: "誰にいつ連絡すべきか分からず、対応漏れで成約機会を逃す" },
             ].map((problem, index) => (
               <motion.div key={index} variants={fadeIn}>
-                <Card className="border-2 border-slate-200 hover:border-cyan-500 transition-all duration-300 shadow-sm hover:shadow-lg">
-                  <CardContent className="p-6 flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-cyan-100 flex items-center justify-center">
-                      <problem.icon className="h-6 w-6 text-cyan-600" />
+                <Card className="border-2 border-slate-200 hover:border-cyan-500 transition-all duration-300 shadow-sm hover:shadow-lg bg-white">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4 mb-3">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-cyan-100 flex items-center justify-center">
+                        <problem.icon className="h-6 w-6 text-cyan-600" />
+                      </div>
+                      <p className="text-lg text-slate-900 font-bold pt-2">{problem.text}</p>
                     </div>
-                    <p className="text-lg text-slate-700 font-medium pt-2">{problem.text}</p>
+                    <p className="text-sm text-slate-600 leading-relaxed pl-16">{problem.detail}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -359,8 +362,8 @@ export default function Home() {
               },
             ].map((point, index) => (
               <motion.div key={index} variants={fadeIn}>
-                <Card className="border-2 border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
-                  <CardHeader className="bg-gradient-to-br from-cyan-50 to-blue-50">
+                <Card className="border-2 border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 h-full bg-white">
+                  <CardHeader className="bg-white border-b border-slate-100">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-full bg-cyan-600 flex items-center justify-center flex-shrink-0">
                         <point.icon className="h-6 w-6 text-white" />
@@ -368,7 +371,7 @@ export default function Home() {
                       <CardTitle className="text-slate-900">{point.title}</CardTitle>
                     </div>
                   </CardHeader>
-                  <CardContent className="pt-6">
+                  <CardContent className="pt-6 bg-white">
                     <p className="text-slate-700 leading-relaxed">{point.description}</p>
                   </CardContent>
                 </Card>
@@ -476,14 +479,14 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="border-2 border-slate-200 shadow-sm">
-              <CardHeader className="bg-gradient-to-br from-cyan-50 to-blue-50">
+            <Card className="border-2 border-slate-200 shadow-sm bg-white">
+              <CardHeader className="bg-white border-b border-slate-100">
                 <CardTitle className="flex items-center gap-3 text-slate-900">
                   <Users className="h-6 w-6 text-cyan-600" />
                   対象
                 </CardTitle>
               </CardHeader>
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 bg-white">
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
@@ -497,14 +500,14 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-slate-200 shadow-sm">
-              <CardHeader className="bg-gradient-to-br from-blue-50 to-indigo-50">
+            <Card className="border-2 border-slate-200 shadow-sm bg-white">
+              <CardHeader className="bg-white border-b border-slate-100">
                 <CardTitle className="flex items-center gap-3 text-slate-900">
                   <Clock className="h-6 w-6 text-blue-600" />
                   日時・所要時間
                 </CardTitle>
               </CardHeader>
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 bg-white">
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
@@ -522,14 +525,14 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-slate-200 shadow-sm">
-              <CardHeader className="bg-gradient-to-br from-indigo-50 to-purple-50">
+            <Card className="border-2 border-slate-200 shadow-sm bg-white">
+              <CardHeader className="bg-white border-b border-slate-100">
                 <CardTitle className="flex items-center gap-3 text-slate-900">
                   <Target className="h-6 w-6 text-indigo-600" />
                   開催形式
                 </CardTitle>
               </CardHeader>
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 bg-white">
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-indigo-600 flex-shrink-0 mt-0.5" />
@@ -543,14 +546,14 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-cyan-500 shadow-lg bg-gradient-to-br from-cyan-50 to-blue-50">
-              <CardHeader>
+            <Card className="border-2 border-cyan-500 shadow-lg bg-white">
+              <CardHeader className="bg-white border-b border-cyan-100">
                 <CardTitle className="flex items-center gap-3 text-slate-900">
                   <CheckCircle2 className="h-6 w-6 text-cyan-600" />
                   参加費
                 </CardTitle>
               </CardHeader>
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 bg-white">
                 <p className="text-3xl font-bold text-cyan-600">無料</p>
               </CardContent>
             </Card>
