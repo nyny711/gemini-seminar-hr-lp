@@ -39,7 +39,41 @@ export const appRouter = router({
             phone: input.phone,
             challenge: input.challenge || null,
           });
-          return { success: true };
+
+          // Send confirmation email to applicant
+          const { sendEmail, generateConfirmationEmail, generateAdminNotificationEmail } = await import("./email");
+          const { ENV } = await import("./_core/env");
+          
+          const confirmationEmailSent = await sendEmail({
+            to: input.email,
+            subject: "【申し込み完了】SI・開発営業のためのGemini活用セミナー",
+            html: generateConfirmationEmail({
+              name: input.name,
+              company: input.company,
+              position: input.position,
+              email: input.email,
+              phone: input.phone,
+              challenge: input.challenge || null,
+            }),
+          });
+
+          // Send notification email to admin
+          if (ENV.sendgridFromEmail) {
+            await sendEmail({
+              to: ENV.sendgridFromEmail,
+              subject: "【新規申し込み】Gemini活用セミナー",
+              html: generateAdminNotificationEmail({
+                name: input.name,
+                company: input.company,
+                position: input.position,
+                email: input.email,
+                phone: input.phone,
+                challenge: input.challenge || null,
+              }),
+            });
+          }
+
+          return { success: true, emailSent: confirmationEmailSent };
         } catch (error) {
           console.error("Failed to insert seminar registration:", error);
           return { success: false };

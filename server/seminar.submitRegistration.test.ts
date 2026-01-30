@@ -7,6 +7,13 @@ vi.mock("./db", () => ({
   insertSeminarRegistration: vi.fn().mockResolvedValue(undefined),
 }));
 
+// Mock the email module
+vi.mock("./email", () => ({
+  sendEmail: vi.fn().mockResolvedValue(true),
+  generateConfirmationEmail: vi.fn().mockReturnValue("<p>Confirmation</p>"),
+  generateAdminNotificationEmail: vi.fn().mockReturnValue("<p>Admin notification</p>"),
+}));
+
 function createMockContext(): { ctx: TrpcContext } {
   const ctx: TrpcContext = {
     user: undefined,
@@ -38,7 +45,8 @@ describe("seminar.submitRegistration", () => {
       challenge: "提案書作成に時間がかかる",
     });
 
-    expect(result).toEqual({ success: true });
+    expect(result.success).toBe(true);
+    expect(result).toHaveProperty('emailSent');
   });
 
   it("successfully submits registration without optional challenge field", async () => {
@@ -53,7 +61,8 @@ describe("seminar.submitRegistration", () => {
       phone: "090-1234-5678",
     });
 
-    expect(result).toEqual({ success: true });
+    expect(result.success).toBe(true);
+    expect(result).toHaveProperty('emailSent');
   });
 
   it("rejects registration with missing required fields", async () => {
