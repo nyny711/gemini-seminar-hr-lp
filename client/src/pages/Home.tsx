@@ -606,19 +606,19 @@ export default function Home() {
       </section>
 
       {/* Registration Form Section */}
-      <section id="registration-form" className="py-20 bg-white">
+      <section id="registration-form" className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="container px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">参加申し込み</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">参加申し込み</h2>
               <div className="w-20 h-1 bg-cyan-600 mx-auto mt-6" />
             </div>
 
-            <Card className="border-2 border-slate-200 shadow-lg">
-              <CardContent className="p-8">
+            <Card className="border-2 border-slate-700 shadow-lg bg-slate-800">
+              <CardContent className="p-8 bg-slate-800">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="company" className="block text-sm font-semibold text-slate-900 mb-2">
+                    <label htmlFor="company" className="block text-sm font-semibold text-white mb-2">
                       会社名 <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -635,7 +635,7 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-slate-900 mb-2">
+                    <label htmlFor="name" className="block text-sm font-semibold text-white mb-2">
                       名前 <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -652,7 +652,7 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <label htmlFor="position" className="block text-sm font-semibold text-slate-900 mb-2">
+                    <label htmlFor="position" className="block text-sm font-semibold text-white mb-2">
                       役職 <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -669,7 +669,7 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-slate-900 mb-2">
+                    <label htmlFor="email" className="block text-sm font-semibold text-white mb-2">
                       メールアドレス <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -686,7 +686,7 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-slate-900 mb-2">
+                    <label htmlFor="phone" className="block text-sm font-semibold text-white mb-2">
                       電話番号 <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -703,7 +703,7 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <label htmlFor="challenge" className="block text-sm font-semibold text-slate-900 mb-2">
+                    <label htmlFor="challenge" className="block text-sm font-semibold text-white mb-2">
                       課題に感じていること
                     </label>
                     <textarea
