@@ -25,4 +25,19 @@ export const users = mysqlTable("users", {
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
-// TODO: Add your tables here
+/**
+ * Seminar registrations table for storing form submissions
+ */
+export const seminarRegistrations = mysqlTable("seminar_registrations", {
+  id: int("id").autoincrement().primaryKey(),
+  companyName: varchar("company_name", { length: 255 }).notNull(),
+  name: varchar("name", { length: 255 }).notNull(),
+  position: varchar("position", { length: 255 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  phone: varchar("phone", { length: 50 }).notNull(),
+  challenge: text("challenge"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export type SeminarRegistration = typeof seminarRegistrations.$inferSelect;
+export type InsertSeminarRegistration = typeof seminarRegistrations.$inferInsert;
