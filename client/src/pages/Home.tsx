@@ -318,7 +318,7 @@ export default function Home() {
               },
             ].map((problem, index) => (
               <motion.div key={index} variants={fadeIn}>
-                <Card className="border-2 border-slate-200 hover:border-cyan-500 transition-all duration-300 shadow-sm hover:shadow-lg bg-white">
+                <Card className="border-2 border-slate-200 hover:border-cyan-500 transition-all duration-300 shadow-sm hover:shadow-lg bg-white h-full">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4 mb-3">
                       <div className="flex-shrink-0 w-12 h-12 rounded-full bg-cyan-100 flex items-center justify-center">
