@@ -16,12 +16,12 @@ import { toast } from "sonner";
 // セミナー情報の定義
 const seminar = {
   id: "vol1",
-  title: "「マッチング精度」を最大化する",
-  subtitle: "～人材と案件のマッチングをAIで効率化する～",
-  date: "2026年2月10日(火)",
+  title: "忙しい営業組織を売れる組織へ",
+  subtitle: "～煩雑な業務をAIで自動化し、顧客に向き合う～",
+  date: "2026年2月24日(火)",
   time: "14:00～15:00",
-  image: "/seminar-vol1.png",
-  description: "案件理解・人材マッチング・提案資料作成・進捗管理をAIで効率化。営業を「本来の仕事」に集中させる具体的メソッドを解説！"
+  image: "/seminar-banner.png",
+  description: "属人化・手作業・対応漏れ…人材営業組織を「成果が出る状態」に変える実践メソッドを解説！"
 };
 
 export default function Home() {
@@ -173,7 +173,7 @@ export default function Home() {
                 type: "spring",
                 stiffness: 100
               }}
-              className="mb-10 max-w-2xl mx-auto"
+              className="mb-6 max-w-2xl mx-auto"
             >
               <motion.div 
                 animate={{ 
@@ -240,7 +240,7 @@ export default function Home() {
       </section>
 
       {/* Seminar Details Section */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-white">
         <div className="container px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">セミナー概要</h2>
@@ -248,7 +248,7 @@ export default function Home() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <Card className="border-2 border-cyan-500 shadow-xl overflow-hidden">
+            <Card className="border-2 border-cyan-500 shadow-xl overflow-hidden bg-white">
               <div className="relative h-80 md:h-96">
                 <img 
                   src={seminar.image} 
@@ -256,7 +256,7 @@ export default function Home() {
                   className="w-full h-full object-contain bg-white"
                 />
               </div>
-              <CardContent className="p-8">
+              <CardContent className="p-8 bg-white">
                 <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">{seminar.title}</h3>
                 <p className="text-lg text-cyan-600 mb-4">{seminar.subtitle}</p>
                 <div className="flex flex-wrap gap-4 mb-6">
