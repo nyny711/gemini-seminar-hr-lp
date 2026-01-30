@@ -78,7 +78,7 @@ export function generateConfirmationEmail(data: {
     </div>
     <div class="content">
       <p>${data.name} 様</p>
-      <p>この度は「人材紹介の営業のためのGemini活用セミナー」にお申し込みいただき、誠にありがとうございます。</p>
+      <p>この度は「人材業界の営業のためのGemini活用セミナー」にお申し込みいただき、誠にありがとうございます。</p>
       
       <div class="info-box">
         <h3>お申し込み内容</h3>
@@ -161,7 +161,7 @@ export function generateAdminNotificationEmail(data: {
     
     <div class="section-title">参加セミナー</div>
     <div class="seminar-info">
-      <strong>「人材紹介の営業のためのGemini活用セミナー」</strong>
+      <strong>「人材業界の営業のためのGemini活用セミナー」</strong>
     </div>
   </div>
 </body>
