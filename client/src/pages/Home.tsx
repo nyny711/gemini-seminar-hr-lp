@@ -296,10 +296,26 @@ export default function Home() {
             className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
           >
             {[
-              { icon: FileText, text: "案件理解・要件整理に時間がかかる", detail: "求人票・案件票がバラバラで、必須スキルが分からず提案スピードが落ちる" },
-              { icon: Users, text: "人材と案件のマッチングが属人的", detail: "ベテラン営業の「勘」や「記憶」に依存し、良い人材が眠りミスマッチが増える" },
-              { icon: MessageSquare, text: "提案資料・推薦文の作成が手作業", detail: "スキルシートを見て文章を毎回手書き、「作る時間」ばかりかかる" },
-              { icon: BarChart3, text: "フォロー・進捗管理が後回しになる", detail: "誰にいつ連絡すべきか分からず、対応漏れで成約機会を逃す" },
+              { 
+                icon: FileText, 
+                text: "案件理解・要件整理に時間がかかる", 
+                detail: "求人票の内容を理解し、必須スキルが分かるまで提案スピードが落ちる。クライアントの業界知識や専門用語の理解に時間を要し、的確な質問ができるまでに複数回のやり取りが必要になる。結果として初回提案までのリードタイムが長期化してしまう。" 
+              },
+              { 
+                icon: Users, 
+                text: "人材と案件のマッチングが属人的", 
+                detail: "ベテラン営業の「勘」や「経験」に依存し、良い人材が眠ったままミスマッチが増える。担当者によってマッチング精度にばらつきが生じ、新人は適切な候補者を見つけられない。データベースに優秀な人材がいても検索条件の設定次第で見逃してしまう。" 
+              },
+              { 
+                icon: MessageSquare, 
+                text: "提案資料・推薦文の作成が手作業", 
+                detail: "スキルシートを見て文章を毎回手書きし、「作る時間」ばかりかかる。候補者の強みを効果的に表現する文章力が求められ、複数の候補者を同時に推薦する際は作業量が膚大になる。過去の成功パターンを活かせず、毎回ゼロから考える非効率が発生している。" 
+              },
+              { 
+                icon: BarChart3, 
+                text: "フォロー・進捗管理が後回しになる", 
+                detail: "誰にいつ連絡すべきか分からず、対応漏れで成約機会を逃す。複数案件を抱えると優先順位付けが曖昧になり、温度感の高い候補者へのフォローが遅れる。結果として他社に先を越されたり、候補者の意欲が低下したりする事態が頻発する。" 
+              },
             ].map((problem, index) => (
               <motion.div key={index} variants={fadeIn}>
                 <Card className="border-2 border-slate-200 hover:border-cyan-500 transition-all duration-300 shadow-sm hover:shadow-lg bg-white">
@@ -363,7 +379,7 @@ export default function Home() {
             ].map((point, index) => (
               <motion.div key={index} variants={fadeIn}>
                 <Card className="border-2 border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 h-full bg-white">
-                  <CardHeader className="bg-white border-b border-slate-100">
+                  <CardHeader className="bg-white border-b border-slate-100 pt-4">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-full bg-cyan-600 flex items-center justify-center flex-shrink-0">
                         <point.icon className="h-6 w-6 text-white" />
@@ -431,11 +447,11 @@ export default function Home() {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-5" className="bg-white border-2 border-slate-200 rounded-lg px-6">
+              <AccordionItem value="item-5" className="bg-white border-2 border-slate-200 rounded-lg px-6 py-1">
                 <AccordionTrigger className="text-left font-semibold text-slate-900 hover:text-cyan-600">
                   録画視聴は可能ですか？
                 </AccordionTrigger>
-                <AccordionContent className="text-slate-600 leading-relaxed">
+                <AccordionContent className="text-slate-600 leading-relaxed pb-4">
                   申し訳ございませんが、録画視聴のご提供は予定しておりません。
                   リアルタイムでのご参加をお願いいたします。
                 </AccordionContent>
