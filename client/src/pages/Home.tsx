@@ -113,7 +113,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-background text-foreground overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-900 text-white">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900 text-white py-20">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -140,7 +140,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <Badge variant="outline" className="mb-6 px-6 py-2 text-sm border-cyan-500 text-cyan-400 bg-cyan-500/10">
+            <Badge variant="outline" className="mt-8 mb-6 px-6 py-2 text-sm border-cyan-500 text-cyan-400 bg-cyan-500/10">
               anyenv株式会社主催ウェビナー
             </Badge>
             
@@ -159,8 +159,8 @@ export default function Home() {
             </h1>
 
             <p className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed max-w-3xl mx-auto">
-              案件理解・人材マッチング・提案資料作成・進捗管理をAIで効率化し、<br />
-              営業を「本来の仕事」に集中させる具体的メソッドを解説！
+              人材紹介ビジネスで培った実践ノウハウを基に、<br />
+              AIで営業効率を最大化し成約率を高める具体的手法を公開！
             </p>
 
             {/* 特典情報 */}
