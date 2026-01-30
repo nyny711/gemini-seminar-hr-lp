@@ -46,7 +46,7 @@ export const appRouter = router({
           
           const confirmationEmailSent = await sendEmail({
             to: input.email,
-            subject: "【申し込み完了】営業のためのGemini活用セミナー",
+            subject: "【申し込み完了】人材紹介の営業のためのGemini活用セミナー",
             html: generateConfirmationEmail({
               name: input.name,
               company: input.company,
@@ -58,20 +58,18 @@ export const appRouter = router({
           });
 
           // Send notification email to admin
-          if (ENV.sendgridFromEmail) {
-            await sendEmail({
-              to: ENV.sendgridFromEmail,
-              subject: "【新規申し込み】Gemini活用セミナー",
-              html: generateAdminNotificationEmail({
-                name: input.name,
-                company: input.company,
-                position: input.position,
-                email: input.email,
-                phone: input.phone,
-                challenge: input.challenge || null,
-              }),
-            });
-          }
+          await sendEmail({
+            to: "info@anyenv-inc.com",
+            subject: "【新規申し込み】Gemini活用セミナー",
+            html: generateAdminNotificationEmail({
+              name: input.name,
+              company: input.company,
+              position: input.position,
+              email: input.email,
+              phone: input.phone,
+              challenge: input.challenge || null,
+            }),
+          });
 
           return { success: true, emailSent: confirmationEmailSent };
         } catch (error) {

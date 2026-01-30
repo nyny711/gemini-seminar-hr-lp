@@ -78,7 +78,7 @@ export function generateConfirmationEmail(data: {
     </div>
     <div class="content">
       <p>${data.name} 様</p>
-      <p>この度は「営業のためのGemini活用セミナー」にお申し込みいただき、誠にありがとうございます。</p>
+      <p>この度は「人材紹介の営業のためのGemini活用セミナー」にお申し込みいただき、誠にありがとうございます。</p>
       
       <div class="info-box">
         <h3>お申し込み内容</h3>
@@ -117,32 +117,51 @@ export function generateAdminNotificationEmail(data: {
 <head>
   <meta charset="UTF-8">
   <style>
-    body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; }
-    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-    .header { background: #1e293b; color: white; padding: 20px; border-radius: 8px 8px 0 0; }
-    .content { background: #f8fafc; padding: 30px; border-radius: 0 0 8px 8px; }
-    .info-box { background: white; padding: 20px; border-radius: 8px; margin: 20px 0; }
-    .label { font-weight: bold; color: #475569; }
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.8; color: #333; margin: 0; padding: 20px; }
+    .container { max-width: 800px; margin: 0 auto; }
+    .header { color: #0891b2; font-size: 20px; font-weight: bold; margin-bottom: 30px; border-bottom: 2px solid #0891b2; padding-bottom: 10px; }
+    .info-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .info-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; }
+    .info-table td:first-child { background: #f1f5f9; font-weight: 600; width: 150px; color: #475569; }
+    .info-table td:last-child { background: white; }
+    .section-title { color: #0891b2; font-size: 16px; font-weight: bold; margin: 30px 0 15px 0; padding-left: 10px; border-left: 4px solid #0891b2; }
+    .seminar-info { background: #f0f9ff; padding: 15px 20px; border-radius: 8px; border-left: 4px solid #0891b2; margin: 20px 0; }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <h2>新規セミナー申し込み通知</h2>
-    </div>
-    <div class="content">
-      <p>新しいセミナー申し込みがありました。</p>
-      
-      <div class="info-box">
-        <p><span class="label">会社名:</span> ${data.company}</p>
-        <p><span class="label">お名前:</span> ${data.name}</p>
-        <p><span class="label">役職:</span> ${data.position}</p>
-        <p><span class="label">メールアドレス:</span> ${data.email}</p>
-        <p><span class="label">電話番号:</span> ${data.phone}</p>
-        ${data.challenge ? `<p><span class="label">課題:</span> ${data.challenge}</p>` : ''}
-      </div>
-      
-      <p>申し込み日時: ${new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}</p>
+    <div class="header">新しいセミナー登録がありました</div>
+    
+    <table class="info-table">
+      <tr>
+        <td>会社名</td>
+        <td>${data.company}</td>
+      </tr>
+      <tr>
+        <td>氏名</td>
+        <td>${data.name}</td>
+      </tr>
+      <tr>
+        <td>役職</td>
+        <td>${data.position}</td>
+      </tr>
+      <tr>
+        <td>メールアドレス</td>
+        <td>${data.email}</td>
+      </tr>
+      <tr>
+        <td>電話番号</td>
+        <td>${data.phone}</td>
+      </tr>
+      ${data.challenge ? `<tr>
+        <td>課題</td>
+        <td>${data.challenge}</td>
+      </tr>` : ''}
+    </table>
+    
+    <div class="section-title">参加セミナー</div>
+    <div class="seminar-info">
+      <strong>「人材紹介の営業のためのGemini活用セミナー」</strong>
     </div>
   </div>
 </body>

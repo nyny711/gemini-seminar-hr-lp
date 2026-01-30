@@ -56,7 +56,7 @@ describe("email", () => {
 
       expect(html).toContain("山田太郎");
       expect(html).toContain("テスト株式会社");
-      expect(html).toContain("新規セミナー申し込み通知");
+      expect(html).toContain("新しいセミナー登録がありました");
     });
   });
 
